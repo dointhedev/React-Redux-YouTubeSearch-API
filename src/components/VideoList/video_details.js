@@ -20,7 +20,7 @@ const VideoDetail = ({video}) => {
     console.log(url)
     return (
         <Col md="8">
-            <Card className="video-details pt-0 pb-3 mb-4">
+            <Card className=" video-details pt-0 pb-3 mb-4">
                 <CardHeader>
                     <iframe
                         width="710"

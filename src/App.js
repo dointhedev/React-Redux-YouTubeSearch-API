@@ -16,6 +16,7 @@ class App extends Component {
             selectedVideo: null
         };
         this.videoSearch('Technology')
+      console.log(this.state.selectedVideo)
     }
 
     videoSearch(term) {
@@ -23,8 +24,8 @@ class App extends Component {
             key: API_KEY,
             term: term
         }, videos => {
-            console.log(videos)
             this.setState({videos: videos, selectedVideo: videos[0]})
+            console.log(this.state.selectedVideo)
         })
 
     }
@@ -32,13 +33,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                <SearchBar onSearchTermChange = {term => this.videoSearch(term) } />
+                <SearchBar onSearchTermChange= {term => this.videoSearch(term) }/>
                 <Container className="video d-flex justify-content-center">
                     <Row>
                         <VideoDetail video={this.state.selectedVideo}/>
                         <VideoList
-                            onVideoSelect=
-                            {selectedVideo => this.setState({selectedVideo})}
+                            onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                             videos={this.state.videos}/>
                     </Row>
                 </Container>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+    CardTitle, CardSubtitle } from 'reactstrap';
 
 const VideoListItem = props => {
   return (
     <div>
-      <Card onClick ={() => this.onVideoSelect(props)} className="pt-0 pb-3 mb-4">
+      <Card onClick ={() => props.onVideoSelect(props.video)} className="pt-0 pb-3 mb-4">
         <CardImg top width="100%" alt={props.title} className="media-object mr-3" src={props.src} />
         <CardBody>
-          <CardTitle><h4>{props.title}</h4></CardTitle>
+          <CardTitle>{props.title}</CardTitle>
           <CardSubtitle className=" pt-2"><b>{props.published}</b></CardSubtitle>
           <CardText className="pt-3 pb-1">{props.desc}</CardText>
           {/* <Button>Button</Button> */}
